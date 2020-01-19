@@ -12,5 +12,10 @@ namespace OpenVg
         {
             Handle = UnsafeNativeMethods.LoadFont(filename);
         }
+
+        protected override void Destroy(IntPtr handle)
+        {
+            UnsafeNativeMethods.DeleteFont(handle);
+        }
     }
 }

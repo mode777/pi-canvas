@@ -19,9 +19,11 @@ namespace OpenVg
         {
             if (Handle != IntPtr.Zero)
             {
-                UnsafeNativeMethods.DeleteBrush(Handle);
+                Destroy(Handle);
             }
         }
+
+        protected abstract void Destroy(IntPtr handle);
 
         protected virtual void Dispose(bool disposing)
         {

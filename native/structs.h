@@ -33,6 +33,7 @@ typedef struct {
 
 typedef uint PICPath;
 typedef uint PICPaint;
+typedef uint PICImage;
 typedef void* PICHandle;
 
 #endif

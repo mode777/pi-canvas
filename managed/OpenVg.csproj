@@ -263,6 +263,7 @@
     <Compile Include="Svg\Transforms\SvgTranslate.cs" />
     <Compile Include="Svg\Web\SvgHandler.cs" />
     <Compile Include="VgFont.cs" />
+    <Compile Include="VgImage.cs" />
     <Compile Include="VgObject.cs" />
     <Compile Include="Canvas.cs" />
     <Compile Include="Colorf.cs" />

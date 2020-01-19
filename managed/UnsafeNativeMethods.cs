@@ -19,7 +19,7 @@ namespace OpenVg
         [DllImport(Library, EntryPoint = "picCreateColor")] public static extern IntPtr CreateColorBrush(ColorF colorf);
         [DllImport(Library, EntryPoint = "picCreateLinearGradient")] public unsafe static extern IntPtr CreateLinearGradientBrush(Line line, ColorStop* stops, int n_stops, SpreadMode spread);
         [DllImport(Library, EntryPoint = "picCreateRadialGradient")] public unsafe static extern IntPtr CreateRadialGradientBrush(RadialCoord coord, ColorStop* stops, int n_stops, SpreadMode spread);
-        [DllImport(Library, EntryPoint = "picDeletePaint")] public static extern void DeleteBrush(IntPtr path);
+        [DllImport(Library, EntryPoint = "picDeletePaint")] public static extern void DeletePaint(IntPtr path);
         [DllImport(Library, EntryPoint = "picCreateElipse")] public static extern IntPtr CreateEllipsePath(float x, float y, float w, float h);
         [DllImport(Library, EntryPoint = "picCreateRect")] public static extern IntPtr CreateRectPath(float x, float y, float w, float h);
         [DllImport(Library, EntryPoint = "picCreatePolygon")] public unsafe static extern IntPtr CreatePolygonPath(PointF * point, int n);
@@ -36,8 +36,11 @@ namespace OpenVg
         [DllImport(Library, EntryPoint = "picPush")] public static extern void Push();
         [DllImport(Library, EntryPoint = "picPop")] public static extern void Pop();
         [DllImport(Library, EntryPoint = "picLoadFont", CharSet = CharSet.Ansi)] public static extern IntPtr LoadFont(string file);
-        [DllImport(Library, EntryPoint = "picDeleteFont")] public static extern void DisposeFont(IntPtr font);
+        [DllImport(Library, EntryPoint = "picDeleteFont")] public static extern void DeleteFont(IntPtr font);
         [DllImport(Library, EntryPoint = "picDrawText", CharSet = CharSet.Ansi)] public static extern void DrawText(IntPtr font, PointF pos, string text, int count, float size, IntPtr fill, IntPtr stroke, float linewidth);
+        [DllImport(Library, EntryPoint = "picCreateImage", CharSet = CharSet.Ansi)] public unsafe static extern IntPtr CreateImage(int width, int height, byte* data);
+        [DllImport(Library, EntryPoint = "picDrawImage", CharSet = CharSet.Ansi)] public static extern void DrawImage(IntPtr img, float x, float y);
+        [DllImport(Library, EntryPoint = "picDeleteImage", CharSet = CharSet.Ansi)] public static extern void DeleteImage(IntPtr img);
 
     }
 }

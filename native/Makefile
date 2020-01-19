@@ -3,8 +3,8 @@ INCLUDEFLAGS=-I/opt/vc/include -I/usr/include/freetype2 -I/opt/vc/include/interf
 
 all: native
 
-native: api.o oglinit.o font.o ovgwrapper.o
-	gcc $(LIBFLAGS) -shared -o pic.so oglinit.o font.o ovgwrapper.o api.o
+native: api.o oglinit.o font.o ovgwrapper.o image.o
+	gcc $(LIBFLAGS) -shared -o pic.so oglinit.o image.o font.o ovgwrapper.o api.o
 
 api.o: api.c 
 	gcc -O2 -Wall $(INCLUDEFLAGS) -c api.c
@@ -14,6 +14,9 @@ oglinit.o:	oglinit.c eglstate.h
 
 font.o: font.c font.h structs.h
 	gcc -O2 -Wall $(INCLUDEFLAGS) -c font.c
+
+image.o: image.c image.h
+	gcc -O2 -Wall $(INCLUDEFLAGS) -c image.c 
 
 ovgwrapper.o:	ovgwrapper.c ovgwrapper.h structs.h
 	gcc -O2 -Wall $(INCLUDEFLAGS) -c ovgwrapper.c

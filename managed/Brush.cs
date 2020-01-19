@@ -8,6 +8,10 @@ namespace OpenVg
 {
     public abstract class VgPaint : VgObject
     {
+        protected override void Destroy(IntPtr handle)
+        {
+            UnsafeNativeMethods.DeletePaint(handle);
+        }
     }
 
     public class ColorPaint : VgPaint

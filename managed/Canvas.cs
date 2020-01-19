@@ -77,6 +77,11 @@ namespace OpenVg
             UnsafeNativeMethods.DrawText(font.Handle, position, text, text.Length, fontSize, fill?.Handle ?? IntPtr.Zero, stroke?.Handle ?? IntPtr.Zero, lineWidth);
         }
 
+        public void DrawImage(VgImage img, float x = 0, float y = 0)
+        {
+            UnsafeNativeMethods.DrawImage(img.Handle, x, y);
+        }
+
         public void Present()
         {
             UnsafeNativeMethods.Present();

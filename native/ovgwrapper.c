@@ -1,6 +1,3 @@
-// Additional outline / windowing functions
-// Paeryn (github.com/paeryn)
-//
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>

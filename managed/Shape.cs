@@ -40,6 +40,11 @@ namespace OpenVg
             return new VgPath(UnsafeNativeMethods.CreateRoundRectPath(x, y, w, h, rw, rh));
         }
 
+        protected override void Destroy(IntPtr handle)
+        {
+            UnsafeNativeMethods.DeletePath(handle);
+        }
+
         internal VgPath(IntPtr ptr)
         {
             Handle = ptr;
